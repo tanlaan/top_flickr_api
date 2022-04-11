@@ -3,3 +3,8 @@
   <%= f.text_field :user_id %><br>
   <%= f.submit "Get Photos"%>
 <% end %>
+<% if @images %>
+  <% @images.each do |image| %>
+    <img src="<%= Flickr.url(image) %>" >
+  <% end %>
+<% end %>
